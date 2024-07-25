@@ -1,5 +1,5 @@
 from algorithms import *
-# Пример использования функций
+
 unsorted_list = [64, 34, 25, 12, 22, 11, 90]
 sorted_list = bubble_sort(unsorted_list.copy())
 print("Отсортированный список:", sorted_list)

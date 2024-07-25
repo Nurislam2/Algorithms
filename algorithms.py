@@ -7,19 +7,29 @@ def bubble_sort(arr):
     return arr
 
 
-
 def binary_search(arr, x):
-    first = 0
-    last = len(arr) - 1
-    mid = 0
+    N = len(arr)
+    ResultOk = False
+    First = 0
+    Last = N - 1
+    Pos = -1
 
-    while first <= last:
-        mid = (last + first) // 2
-
-        if arr[mid] < x:
-            first = mid + 1
-        elif arr[mid] > x:
-            last = mid - 1
+    while First <= Last:
+        Middle = (First + Last) // 2
+        if arr[Middle] == x:
+            First=Middle
+            Last=First
+            Pos = Middle
+            ResultOk = True
+            break
+        elif arr[Middle] < x:
+            First = Middle + 1
         else:
-            return mid
-    return -1
+            Last = Middle - 1
+
+    if ResultOk:
+        print("Элемент найден")
+        return Pos
+    else:
+        print("Элемент не найден")
+        return -1
